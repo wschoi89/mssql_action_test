@@ -1,0 +1,14 @@
+name: Run MSSQL Command in GitHub Actions
+
+on: [push, pull_request]
+
+jobs:
+  mssql-test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Install a SQL Server suite of tools
+        uses: potatoqualitee/mssqlsuite@v1.8
+        with:
+          install: sqlengine, sqlclient, sqlpackage, localdb, fulltext
